@@ -16,6 +16,10 @@ window.addEventListener("load", () => {
       email.placeholder = "";
     }
   });
+
+  email.addEventListener("keydown", () => {
+    setRemoveFor(form);
+  });
 });
 
 function checkEmail(email) {
@@ -31,5 +35,10 @@ function setErrorFor(input) {
 
 function setSuccessFor(input) {
   input.classList.add("valid");
+  input.classList.remove("invalid");
+}
+
+function setRemoveFor(input) {
+  input.classList.remove("valid");
   input.classList.remove("invalid");
 }
